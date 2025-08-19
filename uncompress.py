@@ -18,7 +18,7 @@ else:
 compressed_exts = [".zip", ".rar", ".tar", ".tar.gz", ".tgz"]
 
 # Create an output folder inside Documents to store extracted files
-output_folder = os.path.join(documents_folder, "extracted_files")
+output_folder = os.path.join(documents_folder, "output")
 os.makedirs(output_folder, exist_ok=True)
 
 # Log file to keep track of extracted files and errors
