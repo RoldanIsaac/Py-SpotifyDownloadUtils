@@ -5,7 +5,7 @@ from importlib.machinery import SourceFileLoader
 # module = SourceFileLoader("loadFolder","loadFolder.py")
 # loadFolder = module.load_module()
 
-from loadFolder import Folder
+from utils.loadFolder import Folder
 
 
 # module2 = SourceFileLoader("loadFolder","D:/_xDeveloper/@mymodules/webScrp.py")

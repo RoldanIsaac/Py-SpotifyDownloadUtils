@@ -1,0 +1,4 @@
+eyed3
+beautifulsoup4
+requests
+lxml
