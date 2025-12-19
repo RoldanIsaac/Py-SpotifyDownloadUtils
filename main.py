@@ -1,13 +1,18 @@
 import subprocess
 import sys
 import os
+import json
 
 # Folder paths
 compressed_files_folder = r"C:\Users\Administrator\Downloads"
 output_folder = r"C:\Users\Administrator\Downloads\output"
 
-# String to remove from folder names
-string_to_remove = "SpotiDownloader.com - "
+# Strings to remove from folder and file names
+strings_to_remove = [
+    "SpotiDownloader.com - ",
+    "spotifydown.com - ",
+    # Add more strings here if needed
+]
 
 # Scripts in the same folder
 base_folder = os.path.dirname(os.path.abspath(__file__))
@@ -25,12 +30,12 @@ try:
 
     # Run process loose files script
     print("🚀 Running process loose files script...")
-    subprocess.run([sys.executable, process_loose_files_script, compressed_files_folder, output_folder, string_to_remove], check=True)
+    subprocess.run([sys.executable, process_loose_files_script, compressed_files_folder, output_folder, json.dumps(strings_to_remove)], check=True)
     print("✅ Process loose files script finished.\n")
 
     # Run rename folders script with folder and string arguments
     print("🚀 Running rename folder script...")
-    subprocess.run([sys.executable, rename_folders_script, output_folder, string_to_remove], check=True)
+    subprocess.run([sys.executable, rename_folders_script, output_folder, json.dumps(strings_to_remove)], check=True)
     print("✅ Rename script finished.")
 
     # Run rename files script with folder and string arguments
